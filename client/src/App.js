@@ -1,15 +1,19 @@
 import {Routes, Route, Link} from "react-router-dom"
-import Register from './views/Register';
-import DisplayUsers from './views/DisplayUsers';
-import Login from './views/Login';
-import Cookie from './views/Cookie';
-import UserInfo from "./views/UserInfo";
-
+import Register from './Views/Register'
+import Login from './Views/Login'
+import UserInfo from "./Views/UserInfo"
+import DisplayUsers from "./Views/DisplayUsers"
+import {Container} from "react-bootstrap"
+import Navbar from "./Components/Navbar"
+import Home from "./Views/Home"
+import StoreItem from "./Components/StoreItem"
 function App() {
 
 
   return (
-    <div>
+    <>
+    <Navbar/>
+    <Container>
         <p><Link to="/">Test Cookie</Link>|
         <Link to="/register">Register</Link>|
         <Link to="/login">Login</Link>|
@@ -19,13 +23,16 @@ function App() {
 
 
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<StoreItem />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<DisplayUsers />} />  
           <Route path="/userInfo" element={<UserInfo />} />    
-          <Route path="/" element={<Cookie />} />  
+            
         </Routes>
-    </div>
+    </Container>
+    </>
   );
 }
 
