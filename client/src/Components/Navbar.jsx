@@ -10,8 +10,9 @@ const Navbar = () => {
         <Container>
             <Nav className="me-auto text-white text-decoration-none">
                 <Nav.Link to="/" as={NavLink} className=" text-white text-decoration-none " >Home</Nav.Link>
-                <Nav.Link to="/store" as={NavLink} className=" text-white text-decoration-none ">Store</Nav.Link>
-                <Nav.Link to="/about" as={NavLink} className=" text-white text-decoration-none ">About</Nav.Link>
+                <Nav.Link to="/shoppingcart" as={NavLink} className=" text-white text-decoration-none ">Shopping Cart Feature</Nav.Link>
+                <Nav.Link to="/browse/all" as={NavLink} className=" text-white text-decoration-none ">Browse Games</Nav.Link>
+                <Nav.Link to="/search" as={NavLink} className=" text-white text-decoration-none ">Search</Nav.Link>
             </Nav>
             <Nav.Link to="/register" as={NavLink} className=" text-white text-decoration-none ">Register</Nav.Link>
             <Nav.Link to="/login" as={NavLink} className=" text-white text-decoration-none ">Login</Nav.Link>

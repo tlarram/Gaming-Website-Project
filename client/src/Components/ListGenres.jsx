@@ -26,7 +26,7 @@ const ListGenres = () => {
             genres&&
                 genres.map((genre,i) =>{
                     return (
-                        <Link to={`/genre/${genre.name}`}> {genre.name} | </Link>
+                        <Link style={{textDecoration: "none", color: "white"}} className="font-weight-bold" to={`/genre/${genre.name}`}> {genre.name} | </Link>
                         
                     )
                 })

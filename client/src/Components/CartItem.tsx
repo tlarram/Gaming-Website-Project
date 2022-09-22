@@ -7,9 +7,10 @@ import storeItems from "../data/items.json"
 type CartItemProps = {
   id: number,
   quantity: number
+  cart: object
 }
 
-export function CartItem({ id, quantity }: CartItemProps) {
+export function CartItem({ id, quantity , cart}: CartItemProps) {
   const { removeFromCart } = useShoppingCart()
   const item = storeItems.find(i => i.id === id)
   if (item == null) return null
@@ -17,7 +18,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img
-        src={item.imgUrl}
+        src={cart.short_screenshots[0].image}
         style={{ width: "125px", height: "75px", objectFit: "cover" }}
       />
       <div className="me-auto">

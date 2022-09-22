@@ -101,13 +101,13 @@ const BrowseAll = (props) => {
                 }
                 else{
                     return (
-                        <div key = {game.name} className = "game">
-                            <h1 className=' center-text '>{game.name}</h1>
+                        <div key = {game.name} className = " game">
+                            <h1 className='text-center '>{game.name}</h1>
                             <div className='d-flex'>
                                 <div className='info-box'>
                                     <h3>Rating: {game.rating} </h3>
                                     <div>Released: {game.released}</div>
-                                    <button className = "btn" onClick={()=>getOne(game.id)}>More Details</button>
+                                    <button className = "btn btn-warning" onClick={()=>getOne(game.id)}>More Details</button>
                                     
                                 </div>
                                 <div><img src ={game.short_screenshots[0].image}  className="small-img"  id={`game${game.id}`}/></div>

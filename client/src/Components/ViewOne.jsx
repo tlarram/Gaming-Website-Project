@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link, useNavigate} from 'react-router-dom'
 
 const ViewOne = (props) => {
     const {id} = useParams()
     const [game, setGame] = useState(props.oneGame[0])
+    const navigate = useNavigate()
 
-    
+    let slug = game.name.split(' ').join('+').toLowerCase()
+
     console.log("one game:")
     console.log(game.name)
 
@@ -18,7 +20,7 @@ const ViewOne = (props) => {
   return (
     
     <div>
-        <Link to="/">Back to browse</Link>
+        
         {
             game&&
                 <div  className = "game">
@@ -32,11 +34,21 @@ const ViewOne = (props) => {
                             {
                             game.genres.map((genre,i)=>{
                                 return(
-                                <div>{genre.name}</div>
+                                <span> {genre.name} | </span>
                                 )
                             })
                             }
-                            
+                            <h3>Platforms:</h3>
+                            {
+                                game.platforms.map((plat, i) =>{
+                                    return (
+                                        <span> {plat.platform.name} | </span>
+                                    )
+                                })
+                            }
+                            <h4>Find gameplay videos on youtube</h4>
+                            {/* <button className="btn btn-danger"></button> */}
+                            <a className = "btn btn-danger" style= {{textDecoration: "none", color: "white"}}href={`http://youtube.com/results?sp=mAEB&search_query=${slug}`} target="_blank">Click here for videos</a>
                         </div>
                         <div>
                             <img src ={game.short_screenshots[0].image}  className="small-img"  id={`game${game.id}`}/>
@@ -44,13 +56,15 @@ const ViewOne = (props) => {
                                 {
                                 game.short_screenshots.map((img,i) =>{
                                     return (
-                                    <button className = "btn" onClick={()=>changeImage(game.id,img.image)}>Image {i + 1}</button>
+                                    <button className = "btn btn-secondary" onClick={()=>changeImage(game.id,img.image)}>Image {i + 1}</button>
                                     )
                                 })
                                 }
                             </div>
                         </div>
                     </div>
+                    <button className="btn btn-success" onClick={()=>props.updateCart(game)}>Add to cart</button>
+                    <Link className = "btn btn-warning"to="/browse/all">Back to browse</Link>
                 </div>
         }
     </div>

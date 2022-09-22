@@ -1,6 +1,10 @@
+*{
+    background-color: black;
+    color: white;
+}
 .small-img {
     width: 500px;
-    height: 300px;
+    height: auto;
 }
 
 .d-flex{
