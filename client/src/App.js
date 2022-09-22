@@ -6,20 +6,22 @@ import DisplayUsers from "./Views/DisplayUsers"
 import {Container} from "react-bootstrap"
 import Navbar from "./Components/Navbar"
 import Home from "./Views/Home"
-import StoreItem from "./Components/StoreItem"
+import StoreItem from "./Components/StoreItem.tsx"
+import { ShoppingCartProvider } from "./Context/ShoppingCartContext.tsx"
 function App() {
 
 
   return (
     <>
+    <ShoppingCartProvider>
     <Navbar/>
     <Container>
-        <p><Link to="/">Test Cookie</Link>|
+        {/* <p><Link to="/">Test Cookie</Link>|
         <Link to="/register">Register</Link>|
         <Link to="/login">Login</Link>|
         <Link to="/users">All users</Link>
         <Link to="/userInfo"> User info</Link>
-        </p>
+        </p> */}
 
 
         <Routes>
@@ -32,6 +34,7 @@ function App() {
             
         </Routes>
     </Container>
+    </ShoppingCartProvider>
     </>
   );
 }
