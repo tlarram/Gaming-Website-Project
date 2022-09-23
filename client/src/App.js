@@ -31,7 +31,7 @@ function App() {
   }
   const updateCart = (game) => {
     setCart(game)
-    console.log("updating cart")
+    alert(`Adding ${game.name}`)
   }
   return (
     <>
@@ -42,6 +42,7 @@ function App() {
         {/* <p><Link to="/">Test Cookie</Link>|
         <Link to="/register">Register</Link>|
         <Link to="/login">Login</Link>|
+        <p>
         <Link to="/users">All users</Link>
         <Link to="/userInfo"> User info</Link>
         </p> */}
@@ -49,7 +50,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shoppingcart" element={<StoreItem id={cart.id} name={cart.name} imgUrl = {cart.short_screenshots[0].image} price= "49.99" game={cart}/>} />
+          <Route path="/shoppingcart" element={cart?<StoreItem id={cart.id} name={cart.name} imgUrl = {cart.short_screenshots[0].image} price= "49.99" game={cart}/>:<StoreItem/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<DisplayUsers />} />  

@@ -3,6 +3,7 @@ import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const [refresh, setRefresh] = useState(false)
     const navigate = useNavigate()
     const [user, setUser] = useState({
         email:"",
@@ -20,7 +21,7 @@ const Login = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         axios.post(`http://localhost:8000/api/login`, user, {withCredentials:true})
-            .then(res=>navigate("/users"))
+            .then(res=>navigate("/browse/all"))
             .catch(err => console.log(err.response))
     }
 
