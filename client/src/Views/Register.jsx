@@ -23,8 +23,10 @@ const Register = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         axios.post(`http://localhost:8000/api/register`, user, {withCredentials:true})
-            .then(res=>console.log(res.data))
-            navigate(`/browse/all`)
+            .then(res=>{
+                console.log(res.data)
+                navigate(`/browse/all`)
+            })
             .catch(err => console.log(err.response))
             
     }

@@ -29,8 +29,8 @@ const Navbar = () => {
     <NavbarBs sticky="top" className="bg-black shadow-lg mb-3 text-white text-decoration-none">
         <Container>
             <Nav className="me-auto text-white text-decoration-none">
-                <Nav.Link to="/" as={NavLink} className=" text-white text-decoration-none " >Home</Nav.Link>
-                <Nav.Link to="/shoppingcart" as={NavLink} className=" text-white text-decoration-none ">Shopping Cart Feature</Nav.Link>
+                {/* <Nav.Link to="/" as={NavLink} className=" text-white text-decoration-none " >Home</Nav.Link> */}
+                {/* <Nav.Link to="/shoppingcart" as={NavLink} className=" text-white text-decoration-none ">Shopping Cart Feature</Nav.Link> */}
                 <Nav.Link to="/browse/all" as={NavLink} className=" text-white text-decoration-none ">Browse Games</Nav.Link>
                 <Nav.Link to="/search" as={NavLink} className=" text-white text-decoration-none ">Search</Nav.Link>
                 <Nav.Link to="/users" as={NavLink} className=" text-white text-decoration-none ">Users</Nav.Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
             <Nav.Link to="/login" as={NavLink} className=" text-white text-decoration-none ">Login</Nav.Link>
             </Nav>
             }
-            {cartQuantity > 0 && (
+            {/* {cartQuantity > 0 && (
             <Button onClick={openCart} style={{width: "3rem", height:"3rem", position: "relative"}}
             variant="outline-primary"
             className="rounded-circle"
@@ -56,8 +56,8 @@ const Navbar = () => {
                 </svg>
                 <div className="rounded-circle bg-danger d-flex justify-content-center align-items-center" 
                 style={{color: "white", width: "1.5rem", height :"1.5rem", position:'absolute', bottom:0, right:0, transform:"translate(25%,25%)",}}>{cartQuantity}</div>
-            </Button>
-            )}
+            </Button> */}
+            {/* )} */}
         </Container>
     </NavbarBs>
   )

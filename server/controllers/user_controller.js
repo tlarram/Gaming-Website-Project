@@ -57,8 +57,6 @@ module.exports.logout = (req, res) =>{
 
 module.exports.getUser = (req, res) =>{
     const decodedJwt = jwt.decode(req.cookies.usertoken, {complete: true})
-    console.log(req.cookies.usertoken)
-    console.log(decodedJwt)
     User.findOne({_id: decodedJwt.payload.id})
         .then(oneUser=>res.json(oneUser))
         .catch(err=>res.status(500).json(err))
