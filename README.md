@@ -16,4 +16,4 @@ our shopping cart will hold the items you've selected so you can go back later t
 This page also features a login and registration page so you can sign in from anywhere and view your shopping cart
 
 # Check out the real-time features!
-![Demo of Find Your Game!](/videoGameWeb.gif)
+![Demo of Find Your Game](/videoGameWeb.gif)
