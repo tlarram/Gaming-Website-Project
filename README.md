@@ -14,3 +14,6 @@ the ability to add the game to your shopping cart(since you won't actually be pu
 our shopping cart will hold the items you've selected so you can go back later to find the titles you wanted to purchase.
 
 This page also features a login and registration page so you can sign in from anywhere and view your shopping cart
+
+# Check out the real-time features!
+![Demo of Find Your Game!](/videoGameWeb.gif)
